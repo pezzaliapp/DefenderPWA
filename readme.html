@@ -1,49 +1,29 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>README — Defender PWA (Tributo)</title>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>README — Defender PWA v2</title>
 <style>
-  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
-  main{max-width:900px;margin:auto;padding:24px}
-  code{background:#111625;padding:2px 6px;border-radius:6px}
-  a{color:#49f3ff;text-decoration:none}
-  h1,h2{color:#49f3ff}
-  ul{margin-top:.3rem}
-  .kbd{display:inline-block;background:#111625;border:1px solid #27324a;border-radius:6px;padding:2px 6px;margin:0 2px}
-  .panel{background:#111625;border:1px solid #27324a;border-radius:10px;padding:12px}
-</style>
-</head>
-<body>
-<main>
-  <h1>🛡️ Defender — PWA (Tributo didattico)</h1>
-  <p>Ricreazione didattica ispirata a <em>Defender</em> (Williams, 1981). Funziona su iPhone/Android/desktop, installabile come PWA e offline-ready.</p>
-  <div class="panel">
-    <strong>Comandi</strong>
-    <ul>
-      <li><span class="kbd">⬅︎</span><span class="kbd">➡︎</span><span class="kbd">⬆︎</span><span class="kbd">⬇︎</span> movimento navicella</li>
-      <li><span class="kbd">Z</span> fuoco • <span class="kbd">X</span> missile intelligente</li>
-      <li><span class="kbd">P</span> pausa • <span class="kbd">R</span> (bottone) restart</li>
-      <li>Su mobile: pulsanti touch in basso</li>
-    </ul>
-  </div>
-  <h2>Come si gioca</h2>
-  <ul>
-    <li>Distruggi i <strong>lander</strong> prima che rapiscano gli <strong>umanoidi</strong>.</li>
-    <li>Se un lander li cattura, salirà verso l’alto: abbattilo per liberarli.</li>
-    <li>Avanza per <strong>ondate</strong>; svuota il livello o salva abbastanza umani per passare al successivo.</li>
-    <li>Il <strong>radar</strong> (in alto a sinistra) mostra navicella, nemici e umani lungo il mondo a scorrimento.</li>
-  </ul>
-  <h2>PWA</h2>
-  <ol>
-    <li>Apri <code>index.html</code> dal tuo hosting statico (GitHub Pages / server).</li>
-    <li>“Aggiungi alla Home” su iOS/Android per installare come app.</li>
-    <li>La cache offline è gestita da <code>sw.js</code>.</li>
-  </ol>
-  <h2>Nota legale</h2>
-  <p>Quest’opera è un <strong>tributo non commerciale</strong> a scopo educativo e non utilizza asset originali.</p>
-  <p>© 2025 pezzaliAPP — Licenza MIT.</p>
-</main>
-</body>
-</html>
+body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
+main{max-width:900px;margin:auto;padding:24px}
+code{background:#111625;padding:2px 6px;border-radius:6px}
+a{color:#49f3ff;text-decoration:none}
+h1,h2{color:#49f3ff}
+.panel{background:#111625;border:1px solid #27324a;border-radius:10px;padding:12px}
+.kbd{display:inline-block;background:#111625;border:1px solid #27324a;border-radius:6px;padding:2px 6px;margin:0 2px}
+</style></head>
+<body><main>
+<h1>🛡️ Defender — PWA v2 (Tributo didattico)</h1>
+<p>Versione ottimizzata per smartphone: <strong>d‑pad a sinistra</strong> e <strong>FIRE (SPACE)</strong> grande a destra, audio sintetico WebAudio.</p>
+<div class="panel"><strong>Comandi</strong>
+<ul>
+<li>Desktop: <span class="kbd">← → ↑ ↓</span> • <span class="kbd">SPACE</span>=Fuoco • <span class="kbd">X</span>=Missile • <span class="kbd">P</span>=Pausa</li>
+<li>Mobile: D‑pad sinistro • Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra</li>
+</ul></div>
+<h2>Audio</h2>
+<p>Su iOS l’audio parte dopo un primo tocco (limite del sistema). Dopo aver premuto <em>FIRE</em> sentirai gli effetti.</p>
+<h2>Installazione PWA</h2>
+<ol>
+<li>Carica la cartella su un hosting statico.</li>
+<li>Apri <code>index.html</code> e usa “Aggiungi alla Home”.</li>
+</ol>
+<p>© 2025 pezzaliAPP — MIT.</p>
+</main></body></html>
