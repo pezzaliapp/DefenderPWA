@@ -6,7 +6,12 @@
 <title>README — Defender PWA v2.3</title>
 <style>
   body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
-  main{max-width:900px;margin:auto;padding:24px}
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#111625;border-bottom:1px solid #27324a;
+         display:flex;justify-content:center;padding:12px}
+  header a.play{background:#49f3ff;color:#0b0f19;padding:10px 22px;border-radius:8px;text-decoration:none;
+         font-weight:bold;box-shadow:0 0 10px #49f3ff55;transition:all .2s}
+  header a.play:hover{background:#36c9d9}
+  main{max-width:900px;margin:80px auto 40px auto;padding:24px}
   code{background:#111625;padding:2px 6px;border-radius:6px}
   a{color:#49f3ff;text-decoration:none}
   h1,h2{color:#49f3ff}
@@ -17,6 +22,11 @@
 </style>
 </head>
 <body>
+
+<header>
+  <a class="play" href="https://www.alessandropezzali.it/DefenderPWA/" target="_blank">▶ PLAY</a>
+</header>
+
 <main>
   <h1>🛡️ Defender — PWA v2.3 (Tributo didattico)</h1>
   <p>Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong>, ispirata al grande classico del 1981:<br><strong>Defender</strong>, arcade leggendario firmato Williams Electronics.</p>
@@ -67,5 +77,6 @@
   <p>© 2025 pezzaliAPP — MIT<br>
   Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong> per rendere omaggio a un capolavoro del 1981.</p>
 </main>
+
 </body>
 </html>
