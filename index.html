@@ -14,9 +14,12 @@
     *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     #wrap{display:flex;flex-direction:column;min-height:100vh}
-    header{padding:.6rem 1rem;background:linear-gradient(180deg,#0e1425,#0b0f19);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a2336}
+    header{padding:.6rem 1rem;background:linear-gradient(180deg,#0e1425,#0b0f19);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a2336;gap:.8rem}
     header h1{margin:0;font-size:1rem;letter-spacing:.06em;color:var(--accent)}
-    header .meta{font-size:.8rem;color:var(--muted)}
+    header .meta{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.6rem}
+    /* nuovo pulsante README */
+    .btn-link{border:1px solid var(--border);border-radius:8px;padding:.35rem .6rem;color:#dbe4f5;text-decoration:none;display:inline-flex;align-items:center;gap:.35rem}
+    .btn-link:hover{background:#141b2c}
     #stageWrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.5rem}
     canvas{background:#05060a;border:1px solid #20293d;border-radius:8px;width:100%;max-width:900px;touch-action:none}
     #hud{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:.5rem 0}
@@ -42,7 +45,10 @@
 <div id="wrap">
   <header>
     <h1>DEFENDER — tributo PWA v2</h1>
-    <div class="meta">© 2025 pezzaliAPP — MIT</div>
+    <div class="meta">
+      <a class="btn-link" href="https://www.alessandropezzali.it/DefenderPWA/readme.html" target="_blank" rel="noopener">📄 README</a>
+      <span>© 2025 pezzaliAPP — MIT</span>
+    </div>
   </header>
 
   <div id="stageWrap">
