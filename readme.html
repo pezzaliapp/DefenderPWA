@@ -5,78 +5,291 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>README — Defender PWA v2.3</title>
 <style>
-  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
-  header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#111625;border-bottom:1px solid #27324a;
-         display:flex;justify-content:center;padding:12px}
-  header a.play{background:#49f3ff;color:#0b0f19;padding:10px 22px;border-radius:8px;text-decoration:none;
+  :root{--bg:#0b0f19;--panel:#111625;--accent:#49f3ff;--text:#e9eef5;--muted:#91a0ba;--border:#27324a}
+  *{box-sizing:border-box}
+  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:var(--bg);color:var(--text)}
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#111625;border-bottom:1px solid var(--border);
+         display:flex;justify-content:center;align-items:center;gap:20px;padding:12px}
+  header a.play{background:var(--accent);color:#0b0f19;padding:10px 22px;border-radius:8px;text-decoration:none;
          font-weight:bold;box-shadow:0 0 10px #49f3ff55;transition:all .2s}
-  header a.play:hover{background:#36c9d9}
+  header a.play:hover{filter:brightness(0.95)}
+  header select{padding:8px 12px;border-radius:6px;background:#0b0f19;color:var(--text);border:1px solid var(--border)}
   main{max-width:900px;margin:80px auto 40px auto;padding:24px}
   code{background:#111625;padding:2px 6px;border-radius:6px}
-  a{color:#49f3ff;text-decoration:none}
-  h1,h2{color:#49f3ff}
-  .panel{background:#111625;border:1px solid #27324a;border-radius:10px;padding:12px}
-  .kbd{display:inline-block;background:#111625;border:1px solid #27324a;border-radius:6px;padding:2px 6px;margin:0 2px}
-  hr{border:0;border-top:1px solid #27324a;margin:16px 0}
+  a{color:var(--accent);text-decoration:none}
+  h1,h2{color:var(--accent);margin-top:0.6rem}
+  .kbd{display:inline-block;background:#111625;border:1px solid var(--border);border-radius:6px;padding:2px 6px;margin:0 2px}
+  hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   ul{margin-top:.3rem}
+  footer{opacity:.9}
 </style>
 </head>
 <body>
 
 <header>
-  <a class="play" href="https://www.alessandropezzali.it/DefenderPWA/" target="_blank">▶ PLAY</a>
+  <a class="play" href="https://www.alessandropezzali.it/DefenderPWA/" target="_blank" rel="noopener">▶ PLAY</a>
+  <select id="langSelect" aria-label="Language">
+    <option value="it" selected>Italiano</option>
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="de">Deutsch</option>
+  </select>
 </header>
 
 <main>
-  <h1>🛡️ Defender — PWA v2.3 (Tributo didattico)</h1>
-  <p>Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong>, ispirata al grande classico del 1981:<br><strong>Defender</strong>, arcade leggendario firmato Williams Electronics.</p>
+  <h1 data-i18n="h1">🛡️ Defender — PWA v2.3 (Tributo didattico)</h1>
+
+  <p data-i18n="intro">
+    Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong>, ispirata al grande classico del 1981:
+    <br><strong>Defender</strong>, arcade leggendario firmato Williams Electronics.
+  </p>
+
   <hr>
-  <h2>📖 Storia</h2>
-  <p>Defender fu pubblicato nel <strong>1981</strong> ed è ricordato come uno degli arcade più <strong>difficili e appassionanti</strong> mai usciti.<br>
-  Innovativo per l’epoca, introduceva:</p>
+
+  <h2 data-i18n="history_h2">📖 Storia</h2>
+  <p data-i18n="history_p1">
+    Defender fu pubblicato nel <strong>1981</strong> ed è ricordato come uno degli arcade più
+    <strong>difficili e appassionanti</strong> mai usciti. Innovativo per l’epoca, introduceva:
+  </p>
   <ul>
-    <li>Scorrimento orizzontale continuo,</li>
-    <li>Radar in alto per localizzare nemici e umanoidi,</li>
-    <li>Umanoidi da salvare prima che venissero rapiti dagli alieni.</li>
+    <li data-i18n="history_li1">Scorrimento orizzontale continuo,</li>
+    <li data-i18n="history_li2">Radar in alto per localizzare nemici e umanoidi,</li>
+    <li data-i18n="history_li3">Umanoidi da salvare prima che venissero rapiti dagli alieni.</li>
   </ul>
-  <p>La sua difficoltà derivava dalla velocità frenetica, dalla gestione contemporanea di radar e azione di gioco,<br>
-  e dalla necessità di scegliere tra sparare, muoversi e salvare vite umane.<br>
-  Un titolo che metteva a dura prova riflessi, concentrazione e resistenza del giocatore.</p>
+  <p data-i18n="history_p2">
+    La sua difficoltà derivava dalla velocità frenetica, dalla gestione contemporanea di radar e azione di gioco,
+    e dalla necessità di scegliere tra sparare, muoversi e salvare vite umane. Un titolo che metteva a dura prova
+    riflessi, concentrazione e resistenza del giocatore.
+  </p>
+
   <hr>
-  <h2>🎮 Comandi</h2>
-  <p><strong>Desktop / Laptop</strong></p>
+
+  <h2 data-i18n="controls_h2">🎮 Comandi</h2>
+
+  <p><strong data-i18n="controls_desktop_title">Desktop / Laptop</strong></p>
   <ul>
-    <li>← → ↑ ↓ = Movimento</li>
-    <li><span class="kbd">SPACE</span> = Fuoco</li>
-    <li><span class="kbd">X</span> = Missile</li>
-    <li><span class="kbd">P</span> = Pausa</li>
-    <li><strong>⏯ Pausa</strong> e <strong>⟲ Restart</strong> (pulsanti HUD) visibili solo su desktop</li>
+    <li data-i18n="controls_desktop_li1">← → ↑ ↓ = Movimento</li>
+    <li data-i18n="controls_desktop_li2"><span class="kbd">SPACE</span> = Fuoco</li>
+    <li data-i18n="controls_desktop_li3"><span class="kbd">X</span> = Missile</li>
+    <li data-i18n="controls_desktop_li4"><span class="kbd">P</span> = Pausa</li>
+    <li data-i18n="controls_desktop_li5"><strong>⏯ Pausa</strong> e <strong>⟲ Restart</strong> (pulsanti HUD) visibili solo su desktop</li>
   </ul>
-  <p><strong>Mobile (Smartphone / Tablet)</strong></p>
+
+  <p><strong data-i18n="controls_mobile_title">Mobile (Smartphone / Tablet)</strong></p>
   <ul>
-    <li>D-pad sinistro = movimento</li>
-    <li>Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra</li>
-    <li>Pulsanti Pausa/Restart nascosti per lasciare più spazio al gioco</li>
+    <li data-i18n="controls_mobile_li1">D-pad sinistro = movimento</li>
+    <li data-i18n="controls_mobile_li2">Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra</li>
+    <li data-i18n="controls_mobile_li3">Pulsanti Pausa/Restart nascosti per lasciare più spazio al gioco</li>
   </ul>
+
   <hr>
-  <h2>🔢 FPS</h2>
-  <p>In alto viene mostrato il valore <strong>FPS (Frame Per Second)</strong>:
-  <br><strong>60 FPS</strong> = massima fluidità (obiettivo ideale).
-  <br>Se scende molto (es. sotto 30), significa che il dispositivo fatica a mantenere il ritmo.</p>
+
+  <h2 data-i18n="fps_h2">🔢 FPS</h2>
+  <p data-i18n="fps_p">
+    In alto viene mostrato il valore <strong>FPS (Frame Per Second)</strong>: <strong>60 FPS</strong> = massima fluidità (obiettivo ideale).
+    Se scende molto (es. sotto 30), significa che il dispositivo fatica a mantenere il ritmo.
+  </p>
+
   <hr>
-  <h2>🔊 Audio</h2>
-  <p>Su iOS l’audio parte dopo un primo tocco (limite del sistema).
-  <br>Dopo aver premuto <em>FIRE</em> sentirai gli effetti sonori (laser, esplosioni, salvataggi, smart missile).</p>
+
+  <h2 data-i18n="audio_h2">🔊 Audio</h2>
+  <p data-i18n="audio_p">
+    Su iOS l’audio parte dopo un primo tocco (limite del sistema). Dopo aver premuto <em>FIRE</em> sentirai gli effetti sonori
+    (laser, esplosioni, salvataggi, smart missile).
+  </p>
+
   <hr>
-  <h2>📲 Installazione PWA</h2>
+
+  <h2 data-i18n="install_h2">📲 Installazione PWA</h2>
   <ol>
-    <li>Carica la cartella su un hosting statico.</li>
-    <li>Apri <code>index.html</code> e usa <strong>“Aggiungi alla Home”</strong> per installare la PWA su iPhone o Android.</li>
+    <li data-i18n="install_li1">Carica la cartella su un hosting statico.</li>
+    <li data-i18n="install_li2">Apri <code>index.html</code> e usa <strong>“Aggiungi alla Home”</strong> per installare la PWA su iPhone o Android.</li>
   </ol>
+
   <hr>
-  <p>© 2025 pezzaliAPP — MIT<br>
-  Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong> per rendere omaggio a un capolavoro del 1981.</p>
+
+  <footer>
+    <p data-i18n="footer">
+      © 2025 pezzaliAPP — MIT<br>
+      Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong> per rendere omaggio a un capolavoro del 1981.
+    </p>
+  </footer>
 </main>
+
+<script>
+  // i18n dictionary
+  const I18N = {
+    it: {
+      h1:"🛡️ Defender — PWA v2.3 (Tributo didattico)",
+      intro:'Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong>, ispirata al grande classico del 1981:<br><strong>Defender</strong>, arcade leggendario firmato Williams Electronics.',
+      history_h2:"📖 Storia",
+      history_p1:'Defender fu pubblicato nel <strong>1981</strong> ed è ricordato come uno degli arcade più <strong>difficili e appassionanti</strong> mai usciti. Innovativo per l’epoca, introduceva:',
+      history_li1:"Scorrimento orizzontale continuo,",
+      history_li2:"Radar in alto per localizzare nemici e umanoidi,",
+      history_li3:"Umanoidi da salvare prima che venissero rapiti dagli alieni.",
+      history_p2:"La sua difficoltà derivava dalla velocità frenetica, dalla gestione contemporanea di radar e azione di gioco, e dalla necessità di scegliere tra sparare, muoversi e salvare vite umane. Un titolo che metteva a dura prova riflessi, concentrazione e resistenza del giocatore.",
+      controls_h2:"🎮 Comandi",
+      controls_desktop_title:"Desktop / Laptop",
+      controls_desktop_li1:"← → ↑ ↓ = Movimento",
+      controls_desktop_li2:"<span class=\"kbd\">SPACE</span> = Fuoco",
+      controls_desktop_li3:"<span class=\"kbd\">X</span> = Missile",
+      controls_desktop_li4:"<span class=\"kbd\">P</span> = Pausa",
+      controls_desktop_li5:"<strong>⏯ Pausa</strong> e <strong>⟲ Restart</strong> (pulsanti HUD) visibili solo su desktop",
+      controls_mobile_title:"Mobile (Smartphone / Tablet)",
+      controls_mobile_li1:"D-pad sinistro = movimento",
+      controls_mobile_li2:"Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra",
+      controls_mobile_li3:"Pulsanti Pausa/Restart nascosti per lasciare più spazio al gioco",
+      fps_h2:"🔢 FPS",
+      fps_p:"In alto viene mostrato il valore <strong>FPS (Frame Per Second)</strong>: <strong>60 FPS</strong> = massima fluidità (obiettivo ideale). Se scende molto (es. sotto 30), significa che il dispositivo fatica a mantenere il ritmo.",
+      audio_h2:"🔊 Audio",
+      audio_p:"Su iOS l’audio parte dopo un primo tocco (limite del sistema). Dopo aver premuto <em>FIRE</em> sentirai gli effetti sonori (laser, esplosioni, salvataggi, smart missile).",
+      install_h2:"📲 Installazione PWA",
+      install_li1:"Carica la cartella su un hosting statico.",
+      install_li2:'Apri <code>index.html</code> e usa <strong>“Aggiungi alla Home”</strong> per installare la PWA su iPhone o Android.',
+      footer:'© 2025 pezzaliAPP — MIT<br>Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong> per rendere omaggio a un capolavoro del 1981.'
+    },
+    en: {
+      h1:"🛡️ Defender — PWA v2.3 (Educational tribute)",
+      intro:'A <strong>2025 re-imagined replica by Alessandro Pezzali</strong>, inspired by the 1981 classic:<br><strong>Defender</strong>, the legendary Williams Electronics arcade.',
+      history_h2:"📖 History",
+      history_p1:'Defender was released in <strong>1981</strong> and is remembered as one of the most <strong>difficult and compelling</strong> arcades ever made. Innovative for its time, it introduced:',
+      history_li1:"Continuous horizontal scrolling,",
+      history_li2:"A top radar to locate enemies and humanoids,",
+      history_li3:"Humanoids to rescue before they are abducted by aliens.",
+      history_p2:"Its difficulty came from the frantic speed, the simultaneous management of radar and moment-to-moment action, and the need to choose between shooting, moving and saving human lives. A title that tested reflexes, focus, and stamina.",
+      controls_h2:"🎮 Controls",
+      controls_desktop_title:"Desktop / Laptop",
+      controls_desktop_li1:"← → ↑ ↓ = Movement",
+      controls_desktop_li2:"<span class=\"kbd\">SPACE</span> = Fire",
+      controls_desktop_li3:"<span class=\"kbd\">X</span> = Smart missile",
+      controls_desktop_li4:"<span class=\"kbd\">P</span> = Pause",
+      controls_desktop_li5:"<strong>⏯ Pause</strong> and <strong>⟲ Restart</strong> (HUD buttons) visible on desktop only",
+      controls_mobile_title:"Mobile (Smartphone / Tablet)",
+      controls_mobile_li1:"Left D-pad = movement",
+      controls_mobile_li2:"<strong>FIRE</strong> and <strong>MISSILE</strong> buttons on the right",
+      controls_mobile_li3:"Pause/Restart buttons hidden to leave more room for the game",
+      fps_h2:"🔢 FPS",
+      fps_p:"The top bar shows <strong>FPS (Frames Per Second)</strong>: <strong>60 FPS</strong> = ideal smoothness. If it drops well below (e.g., < 30), your device is struggling to keep up.",
+      audio_h2:"🔊 Audio",
+      audio_p:"On iOS, audio starts after the first user interaction (system limitation). After pressing <em>FIRE</em> you will hear the sound effects (laser, explosions, rescues, smart missile).",
+      install_h2:"📲 PWA Installation",
+      install_li1:"Upload the folder to a static hosting.",
+      install_li2:'Open <code>index.html</code> and use <strong>“Add to Home Screen”</strong> to install on iPhone or Android.',
+      footer:'© 2025 pezzaliAPP — MIT<br>A <strong>2025 re-imagined replica by Alessandro Pezzali</strong> honoring a 1981 masterpiece.'
+    },
+    fr: {
+      h1:"🛡️ Defender — PWA v2.3 (Hommage éducatif)",
+      intro:'Une <strong>réplique réinventée en 2025 par Alessandro Pezzali</strong>, inspirée du classique de 1981 :<br><strong>Defender</strong>, l’arcade légendaire de Williams Electronics.',
+      history_h2:"📖 Histoire",
+      history_p1:'Sorti en <strong>1981</strong>, Defender est considéré comme l’un des arcades les plus <strong>difficiles et captivants</strong>. Innovant pour l’époque, il introduit :',
+      history_li1:"Un défilement horizontal continu,",
+      history_li2:"Un radar supérieur pour localiser ennemis et humanoïdes,",
+      history_li3:"Des humanoïdes à sauver avant leur enlèvement par les aliens.",
+      history_p2:"Sa difficulté venait de la vitesse effrénée, de la gestion simultanée du radar et de l’action, et du choix constant entre tirer, se déplacer et sauver des vies humaines. Un titre qui mettait à l’épreuve réflexes, concentration et endurance.",
+      controls_h2:"🎮 Commandes",
+      controls_desktop_title:"Ordinateur",
+      controls_desktop_li1:"← → ↑ ↓ = Déplacement",
+      controls_desktop_li2:"<span class=\"kbd\">ESPACE</span> = Tir",
+      controls_desktop_li3:"<span class=\"kbd\">X</span> = Missile",
+      controls_desktop_li4:"<span class=\"kbd\">P</span> = Pause",
+      controls_desktop_li5:"Boutons HUD <strong>⏯ Pause</strong> et <strong>⟲ Redémarrer</strong> visibles seulement sur ordinateur",
+      controls_mobile_title:"Mobile (Smartphone / Tablette)",
+      controls_mobile_li1:"Croix directionnelle gauche = déplacement",
+      controls_mobile_li2:"Boutons <strong>FIRE</strong> et <strong>MISSILE</strong> à droite",
+      controls_mobile_li3:"Boutons Pause/Redémarrer masqués pour laisser plus d’espace au jeu",
+      fps_h2:"🔢 FPS",
+      fps_p:"La barre supérieure affiche les <strong>FPS (images par seconde)</strong> : <strong>60 FPS</strong> = fluidité idéale. Si cela chute beaucoup (ex. < 30), l’appareil peine à suivre.",
+      audio_h2:"🔊 Audio",
+      audio_p:"Sur iOS, le son démarre après une première interaction (limitation du système). Après avoir appuyé sur <em>FIRE</em>, vous entendrez les effets (laser, explosions, sauvetages, smart missile).",
+      install_h2:"📲 Installation PWA",
+      install_li1:"Téléversez le dossier sur un hébergement statique.",
+      install_li2:'Ouvrez <code>index.html</code> puis utilisez <strong>« Ajouter à l’écran d’accueil »</strong> pour installer sur iPhone ou Android.',
+      footer:'© 2025 pezzaliAPP — MIT<br>Une <strong>réplique réinventée en 2025 par Alessandro Pezzali</strong> en hommage à un chef-d’œuvre de 1981.'
+    },
+    es: {
+      h1:"🛡️ Defender — PWA v2.3 (Tributo educativo)",
+      intro:'Una <strong>réplica reinventada en 2025 por Alessandro Pezzali</strong>, inspirada en el clásico de 1981:<br><strong>Defender</strong>, el legendario arcade de Williams Electronics.',
+      history_h2:"📖 Historia",
+      history_p1:'Defender se lanzó en <strong>1981</strong> y es recordado como uno de los arcades más <strong>difíciles y apasionantes</strong>. Innovador para su época, introdujo:',
+      history_li1:"Desplazamiento horizontal continuo,",
+      history_li2:"Un radar superior para localizar enemigos y humanoides,",
+      history_li3:"Humanoides que rescatar antes de ser abducidos por aliens.",
+      history_p2:"Su dificultad provenía de la velocidad frenética, la gestión simultánea del radar y la acción, y la necesidad de elegir entre disparar, moverse y salvar vidas humanas. Un título que ponía a prueba reflejos, concentración y resistencia.",
+      controls_h2:"🎮 Controles",
+      controls_desktop_title:"Escritorio / Portátil",
+      controls_desktop_li1:"← → ↑ ↓ = Movimiento",
+      controls_desktop_li2:"<span class=\"kbd\">ESPACIO</span> = Disparo",
+      controls_desktop_li3:"<span class=\"kbd\">X</span> = Misil",
+      controls_desktop_li4:"<span class=\"kbd\">P</span> = Pausa",
+      controls_desktop_li5:"Botones HUD <strong>⏯ Pausa</strong> y <strong>⟲ Reiniciar</strong> visibles solo en escritorio",
+      controls_mobile_title:"Móvil (Smartphone / Tablet)",
+      controls_mobile_li1:"Cruceta izquierda = movimiento",
+      controls_mobile_li2:"Botones <strong>FIRE</strong> y <strong>MISSILE</strong> a la derecha",
+      controls_mobile_li3:"Pausa/Reiniciar ocultos para dejar más espacio al juego",
+      fps_h2:"🔢 FPS",
+      fps_p:"La parte superior muestra los <strong>FPS (cuadros por segundo)</strong>: <strong>60 FPS</strong> = fluidez ideal. Si baja mucho (p. ej., < 30), el dispositivo no alcanza el ritmo.",
+      audio_h2:"🔊 Audio",
+      audio_p:"En iOS, el audio comienza tras la primera interacción (limitación del sistema). Tras pulsar <em>FIRE</em> oirás los efectos (láser, explosiones, rescates, smart missile).",
+      install_h2:"📲 Instalación PWA",
+      install_li1:"Sube la carpeta a un hosting estático.",
+      install_li2:'Abre <code>index.html</code> y usa <strong>“Añadir a la pantalla de inicio”</strong> para instalar en iPhone o Android.',
+      footer:'© 2025 pezzaliAPP — MIT<br>Una <strong>réplica reinventada en 2025 por Alessandro Pezzali</strong> en honor a una obra maestra de 1981.'
+    },
+    de: {
+      h1:"🛡️ Defender — PWA v2.3 (Lern-Tribut)",
+      intro:'Eine <strong>2025 neu interpretierte Replik von Alessandro Pezzali</strong>, inspiriert vom Klassiker von 1981:<br><strong>Defender</strong>, dem legendären Williams-Arcade.',
+      history_h2:"📖 Geschichte",
+      history_p1:'Defender erschien <strong>1981</strong> und gilt als eines der <strong>schwierigsten und fesselndsten</strong> Arcadespiele. Für seine Zeit innovativ, führte es ein:',
+      history_li1:"Kontinuierliches horizontales Scrolling,",
+      history_li2:"Ein Radar oben zur Ortung von Gegnern und Humanoiden,",
+      history_li3:"Humanoide, die gerettet werden müssen, bevor Aliens sie entführen.",
+      history_p2:"Die Schwierigkeit resultierte aus hohem Tempo, gleichzeitiger Radar- und Action-Steuerung sowie der Entscheidung zwischen Schießen, Manövrieren und Retten. Ein Titel, der Reflexe, Fokus und Ausdauer forderte.",
+      controls_h2:"🎮 Steuerung",
+      controls_desktop_title:"Desktop / Laptop",
+      controls_desktop_li1:"← → ↑ ↓ = Bewegung",
+      controls_desktop_li2:"<span class=\"kbd\">LEERTASTE</span> = Schuss",
+      controls_desktop_li3:"<span class=\"kbd\">X</span> = Rakete",
+      controls_desktop_li4:"<span class=\"kbd\">P</span> = Pause",
+      controls_desktop_li5:"HUD-Tasten <strong>⏯ Pause</strong> und <strong>⟲ Neustart</strong> nur am Desktop sichtbar",
+      controls_mobile_title:"Mobil (Smartphone / Tablet)",
+      controls_mobile_li1:"Linkes Steuerkreuz = Bewegung",
+      controls_mobile_li2:"Tasten <strong>FIRE</strong> und <strong>MISSILE</strong> rechts",
+      controls_mobile_li3:"Pause/Neustart ausgeblendet für mehr Spielfläche",
+      fps_h2:"🔢 FPS",
+      fps_p:"Oben wird <strong>FPS (Frames pro Sekunde)</strong> angezeigt: <strong>60 FPS</strong> = optimale Flüssigkeit. Fällt es stark (z. B. < 30), kommt das Gerät nicht hinterher.",
+      audio_h2:"🔊 Audio",
+      audio_p:"Unter iOS startet Audio nach der ersten Interaktion (Systemeinschränkung). Nach <em>FIRE</em> hörst du die Effekte (Laser, Explosionen, Rettungen, Smart Missile).",
+      install_h2:"📲 PWA-Installation",
+      install_li1:"Den Ordner auf ein statisches Hosting hochladen.",
+      install_li2:'<code>index.html</code> öffnen und <strong>„Zum Home-Bildschirm”</strong> verwenden, um auf iPhone oder Android zu installieren.',
+      footer:'© 2025 pezzaliAPP — MIT<br>Eine <strong>2025 neu interpretierte Replik von Alessandro Pezzali</strong> zu Ehren eines Meisterwerks von 1981.'
+    }
+  };
+
+  // Apply language to all [data-i18n] nodes
+  function applyLang(lang){
+    const dict = I18N[lang] || I18N.it;
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+      const key = el.getAttribute("data-i18n");
+      if(dict[key] !== undefined){
+        el.innerHTML = dict[key];
+      }
+    });
+    localStorage.setItem("readme_lang", lang);
+  }
+
+  // Init from saved or default
+  const saved = localStorage.getItem("readme_lang") || "it";
+  document.getElementById("langSelect").value = saved;
+  applyLang(saved);
+
+  // Change handler
+  document.getElementById("langSelect").addEventListener("change", (e)=>{
+    applyLang(e.target.value);
+  });
+</script>
 
 </body>
 </html>
