@@ -1,29 +1,71 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>README — Defender PWA v2</title>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>README — Defender PWA v2.3</title>
 <style>
-body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
-main{max-width:900px;margin:auto;padding:24px}
-code{background:#111625;padding:2px 6px;border-radius:6px}
-a{color:#49f3ff;text-decoration:none}
-h1,h2{color:#49f3ff}
-.panel{background:#111625;border:1px solid #27324a;border-radius:10px;padding:12px}
-.kbd{display:inline-block;background:#111625;border:1px solid #27324a;border-radius:6px;padding:2px 6px;margin:0 2px}
-</style></head>
-<body><main>
-<h1>🛡️ Defender — PWA v2 (Tributo didattico)</h1>
-<p>Versione ottimizzata per smartphone: <strong>d‑pad a sinistra</strong> e <strong>FIRE (SPACE)</strong> grande a destra, audio sintetico WebAudio.</p>
-<div class="panel"><strong>Comandi</strong>
-<ul>
-<li>Desktop: <span class="kbd">← → ↑ ↓</span> • <span class="kbd">SPACE</span>=Fuoco • <span class="kbd">X</span>=Missile • <span class="kbd">P</span>=Pausa</li>
-<li>Mobile: D‑pad sinistro • Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra</li>
-</ul></div>
-<h2>Audio</h2>
-<p>Su iOS l’audio parte dopo un primo tocco (limite del sistema). Dopo aver premuto <em>FIRE</em> sentirai gli effetti.</p>
-<h2>Installazione PWA</h2>
-<ol>
-<li>Carica la cartella su un hosting statico.</li>
-<li>Apri <code>index.html</code> e usa “Aggiungi alla Home”.</li>
-</ol>
-<p>© 2025 pezzaliAPP — MIT.</p>
-</main></body></html>
+  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;background:#0b0f19;color:#e9eef5}
+  main{max-width:900px;margin:auto;padding:24px}
+  code{background:#111625;padding:2px 6px;border-radius:6px}
+  a{color:#49f3ff;text-decoration:none}
+  h1,h2{color:#49f3ff}
+  .panel{background:#111625;border:1px solid #27324a;border-radius:10px;padding:12px}
+  .kbd{display:inline-block;background:#111625;border:1px solid #27324a;border-radius:6px;padding:2px 6px;margin:0 2px}
+  hr{border:0;border-top:1px solid #27324a;margin:16px 0}
+  ul{margin-top:.3rem}
+</style>
+</head>
+<body>
+<main>
+  <h1>🛡️ Defender — PWA v2.3 (Tributo didattico)</h1>
+  <p>Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong>, ispirata al grande classico del 1981:<br><strong>Defender</strong>, arcade leggendario firmato Williams Electronics.</p>
+  <hr>
+  <h2>📖 Storia</h2>
+  <p>Defender fu pubblicato nel <strong>1981</strong> ed è ricordato come uno degli arcade più <strong>difficili e appassionanti</strong> mai usciti.<br>
+  Innovativo per l’epoca, introduceva:</p>
+  <ul>
+    <li>Scorrimento orizzontale continuo,</li>
+    <li>Radar in alto per localizzare nemici e umanoidi,</li>
+    <li>Umanoidi da salvare prima che venissero rapiti dagli alieni.</li>
+  </ul>
+  <p>La sua difficoltà derivava dalla velocità frenetica, dalla gestione contemporanea di radar e azione di gioco,<br>
+  e dalla necessità di scegliere tra sparare, muoversi e salvare vite umane.<br>
+  Un titolo che metteva a dura prova riflessi, concentrazione e resistenza del giocatore.</p>
+  <hr>
+  <h2>🎮 Comandi</h2>
+  <p><strong>Desktop / Laptop</strong></p>
+  <ul>
+    <li>← → ↑ ↓ = Movimento</li>
+    <li><span class="kbd">SPACE</span> = Fuoco</li>
+    <li><span class="kbd">X</span> = Missile</li>
+    <li><span class="kbd">P</span> = Pausa</li>
+    <li><strong>⏯ Pausa</strong> e <strong>⟲ Restart</strong> (pulsanti HUD) visibili solo su desktop</li>
+  </ul>
+  <p><strong>Mobile (Smartphone / Tablet)</strong></p>
+  <ul>
+    <li>D-pad sinistro = movimento</li>
+    <li>Pulsanti <strong>FIRE</strong> e <strong>MISSILE</strong> a destra</li>
+    <li>Pulsanti Pausa/Restart nascosti per lasciare più spazio al gioco</li>
+  </ul>
+  <hr>
+  <h2>🔢 FPS</h2>
+  <p>In alto viene mostrato il valore <strong>FPS (Frame Per Second)</strong>:
+  <br><strong>60 FPS</strong> = massima fluidità (obiettivo ideale).
+  <br>Se scende molto (es. sotto 30), significa che il dispositivo fatica a mantenere il ritmo.</p>
+  <hr>
+  <h2>🔊 Audio</h2>
+  <p>Su iOS l’audio parte dopo un primo tocco (limite del sistema).
+  <br>Dopo aver premuto <em>FIRE</em> sentirai gli effetti sonori (laser, esplosioni, salvataggi, smart missile).</p>
+  <hr>
+  <h2>📲 Installazione PWA</h2>
+  <ol>
+    <li>Carica la cartella su un hosting statico.</li>
+    <li>Apri <code>index.html</code> e usa <strong>“Aggiungi alla Home”</strong> per installare la PWA su iPhone o Android.</li>
+  </ol>
+  <hr>
+  <p>© 2025 pezzaliAPP — MIT<br>
+  Una <strong>replica rivisitata nel 2025 da Alessandro Pezzali</strong> per rendere omaggio a un capolavoro del 1981.</p>
+</main>
+</body>
+</html>
